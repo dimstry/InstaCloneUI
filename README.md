@@ -1,5 +1,5 @@
 # InstaCloneUI
-This project is an Instagram UI clone built using React Native. It includes features such as user profiles, news feeds, post uploads, and direct messaging, all designed to closely resemble the Instagram user interface.
+This project is an Instagram UI clone built using React Native
 
 ## Main UI
 1. Beranda / Home
