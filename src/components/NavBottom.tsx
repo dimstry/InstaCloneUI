@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
-import {Image, TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icons from 'react-native-vector-icons/MaterialIcons';
 
@@ -10,34 +10,11 @@ import Home from '../screens/Home/Home';
 // import UpComing from '../screens/UpComing/UpComing';
 // import Popular from '../screens/Popular/Popular';
 
+import logoInstagram from '../components/images/instaImg';
+import logoIgtv from '../components/images/igtvImg';
+import logoMessenger from '../components/images/massageImg';
+
 const Tab = createBottomTabNavigator();
-
-function logoInstagram() {
-  return (
-    <Image
-      source={require('../assets/logo/Instagram.png')}
-      style={{width: 105, height: 28}}
-    />
-  );
-}
-
-function logoIgtv() {
-  return (
-    <Image
-      source={require('../assets/logo/IGTV.png')}
-      style={{width: 24, height: 25}}
-    />
-  );
-}
-
-function logoMessenger() {
-  return (
-    <Image
-      source={require('../assets/logo/Messanger.png')}
-      style={{width: 23, height: 20}}
-    />
-  );
-}
 
 const NavBottom = ({navigation}: any) => {
   return (
