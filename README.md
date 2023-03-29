@@ -7,9 +7,6 @@ This project is an Instagram UI clone built using React Native. It includes feat
 3. Search
 4. Profile
 
-## Design reference 
-<a href="https://www.figma.com/file/RJIMVt5kdilG8r16x2UQTT/Instagram-UI-Screens-(Community)?node-id=0-1646&t=8LGpcHrin9Zta8nA-0">Here 💖</a>
-
 ## Priview
 
 
