@@ -2,12 +2,12 @@
 import React from 'react';
 import {Image} from 'react-native';
 
-function logoIgtv() {
+function logoLove() {
   return (
     <Image
-      source={require('../../assets/logo/IGTV.png')}
-      style={{width: 24, height: 25}}
+      source={require('../../assets/logo/Love.png')}
+      style={{width: 29, height: 24}}
     />
   );
 }
-export default logoIgtv;
+export default logoLove;

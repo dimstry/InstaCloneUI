@@ -2,12 +2,12 @@
 import React from 'react';
 import {Image} from 'react-native';
 
-function logoIgtv() {
+function logoPost() {
   return (
     <Image
-      source={require('../../assets/logo/IGTV.png')}
+      source={require('../../assets/logo/Post.png')}
       style={{width: 24, height: 25}}
     />
   );
 }
-export default logoIgtv;
+export default logoPost;

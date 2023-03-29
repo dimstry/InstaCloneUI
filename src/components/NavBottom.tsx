@@ -1,18 +1,24 @@
-/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Icons from 'react-native-vector-icons/MaterialIcons';
+import {View, TouchableOpacity} from 'react-native';
 
 import Home from '../screens/Home/Home';
-// import TopRated from '../screens/TopRated/TopRated';
-// import UpComing from '../screens/UpComing/UpComing';
-// import Popular from '../screens/Popular/Popular';
 
 import logoInstagram from '../components/images/instaImg';
 import logoIgtv from '../components/images/igtvImg';
 import logoMessenger from '../components/images/massageImg';
+import logoCamera from '../components/images/camImg';
+import logoHome from './images/homeImg';
+import logoSearch from './images/searchImg';
+import logoPost from './images/Post';
+import logoLove from './images/loveImg';
+import logoProfile from './images/profilImg';
+
+// import TopRated from '../screens/TopRated/TopRated';
+// import UpComing from '../screens/UpComing/UpComing';
+// import Popular from '../screens/Popular/Popular';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,67 +38,90 @@ const NavBottom = ({navigation}: any) => {
           headerRightContainerStyle: {
             paddingRight: 15,
           },
-          headerTitle: () => logoInstagram(),
+          headerTitle: () => (
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              {logoInstagram()}
+            </View>
+          ),
           headerLeft: () => (
             <TouchableOpacity
+              style={{paddingLeft: 15}}
               onPress={() => {
-                navigation.navigate('Search');
+                navigation.navigate('camera');
               }}>
-              <Icons name="camera-alt" size={28} />
+              {logoCamera()}
             </TouchableOpacity>
           ),
           headerRight: () => (
-            <View style={{display: 'flex', flexDirection: 'row', gap: 10}}>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                gap: 10,
+                alignItems: 'center',
+              }}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('Search');
+                  navigation.navigate('igtv');
                 }}>
                 {logoIgtv()}
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('Search');
+                  navigation.navigate('messenger');
                 }}>
                 {/* massager icon */}
                 {logoMessenger()}
               </TouchableOpacity>
             </View>
           ),
-          tabBarIcon: ({color, size}) => (
-            <Icons name="home" color={color} size={size} />
-          ),
-        }}
-      />
-      {/* <Tab.Screen
-        name="Top Rated"
-        component={TopRated}
-        options={{
-          tabBarLabel: 'Top Rated',
-          tabBarIcon: ({color, size}) => (
-            <Icons name="timeline" color={color} size={size} />
-          ),
+          tabBarStyle: {
+            backgroundColor: '#fff',
+            height: 80,
+          },
+          tabBarIcon: () => <View>{logoHome()}</View>,
+          tabBarLabel: '',
         }}
       />
       <Tab.Screen
-        name="Popular"
-        component={Popular}
+        name="Search"
+        component={Home}
         options={{
-          tabBarLabel: 'Popular',
-          tabBarIcon: ({color, size}) => (
-            <Icons name="favorite" color={color} size={size} />
-          ),
+          tabBarLabel: '',
+          tabBarIcon: () => <TouchableOpacity>{logoSearch()}</TouchableOpacity>,
         }}
       />
       <Tab.Screen
-        name="Up Coming"
-        component={UpComing}
+        name="Reels"
+        component={Home}
         options={{
-          tabBarLabel: 'Up Coming',
-          tabBarIcon: ({color, size}) => (
-            <Icons name="keyboard-arrow-up" color={color} size={size} />
+          tabBarLabel: '',
+          tabBarIcon: () => <TouchableOpacity>{logoPost()}</TouchableOpacity>,
+        }}
+      />
+      <Tab.Screen
+        name="Love"
+        component={Home}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: () => <TouchableOpacity>{logoLove()}</TouchableOpacity>,
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Home}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: () => (
+            <TouchableOpacity>{logoProfile()}</TouchableOpacity>
           ),
         }}
-      /> */}
+      />
     </Tab.Navigator>
   );
 };
