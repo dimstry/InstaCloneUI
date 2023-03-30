@@ -6,7 +6,7 @@ function logoIgtv() {
   return (
     <Image
       source={require('../../assets/logo/IGTV.png')}
-      style={{width: 24, height: 25}}
+      style={{width: 25, height: 26}}
     />
   );
 }

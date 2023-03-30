@@ -6,7 +6,7 @@ function logoPost() {
   return (
     <Image
       source={require('../../assets/logo/Post.png')}
-      style={{width: 24, height: 25}}
+      style={{width: 26, height: 26}}
     />
   );
 }

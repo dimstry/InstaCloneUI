@@ -1,12 +1,12 @@
 import React from 'react';
 import {Image} from 'react-native';
 
-function logoLove(width?: number, height?: number) {
+function logoComment(width?: number, height?: number) {
   return (
     <Image
-      source={require('../../assets/logo/Love.png')}
+      source={require('../../assets/logo/Comment.png')}
       style={{width: width, height: height}}
     />
   );
 }
-export default logoLove;
+export default logoComment;

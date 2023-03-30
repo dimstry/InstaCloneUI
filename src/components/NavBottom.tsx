@@ -38,6 +38,7 @@ const NavBottom = ({navigation}: any) => {
           headerRightContainerStyle: {
             paddingRight: 15,
           },
+          headerShadowVisible: false,
           headerTitle: () => (
             <View
               style={{
@@ -109,7 +110,9 @@ const NavBottom = ({navigation}: any) => {
         component={Home}
         options={{
           tabBarLabel: '',
-          tabBarIcon: () => <TouchableOpacity>{logoLove()}</TouchableOpacity>,
+          tabBarIcon: () => (
+            <TouchableOpacity>{logoLove(29, 26)}</TouchableOpacity>
+          ),
         }}
       />
       <Tab.Screen
