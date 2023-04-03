@@ -2,9 +2,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {View, TouchableOpacity} from 'react-native';
+import {View, TouchableOpacity, Text, Image} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Home from '../screens/Home/Home';
+import Profile from '../screens/Profile/Profile';
 
 import logoInstagram from '../components/images/instaImg';
 import logoIgtv from '../components/images/igtvImg';
@@ -15,6 +17,7 @@ import logoSearch from './images/searchImg';
 import logoPost from './images/Post';
 import logoLove from './images/loveImg';
 import logoProfile from './images/profilImg';
+import logoList from './images/listImg';
 
 // import TopRated from '../screens/TopRated/TopRated';
 // import UpComing from '../screens/UpComing/UpComing';
@@ -29,6 +32,8 @@ const NavBottom = ({navigation}: any) => {
         headerTitleAlign: 'center',
         tabBarStyle: {
           paddingBottom: 2,
+          backgroundColor: '#fff',
+          height: 80,
         },
       }}>
       <Tab.Screen
@@ -81,10 +86,6 @@ const NavBottom = ({navigation}: any) => {
               </TouchableOpacity>
             </View>
           ),
-          tabBarStyle: {
-            backgroundColor: '#fff',
-            height: 80,
-          },
           tabBarIcon: () => <View>{logoHome()}</View>,
           tabBarLabel: '',
         }}
@@ -117,8 +118,44 @@ const NavBottom = ({navigation}: any) => {
       />
       <Tab.Screen
         name="Profile"
-        component={Home}
+        component={Profile}
         options={{
+          headerShadowVisible: false,
+          headerTitle: () => (
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 5,
+              }}>
+              <Icon name="lock" size={17} color="#000" />
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontWeight: '800',
+                  color: '#000',
+                }}>
+                dimstr__
+              </Text>
+              {logoList(11, 7)}
+            </View>
+          ),
+          headerRight: () => (
+            <TouchableOpacity
+              style={{paddingRight: 15}}
+              onPress={() => {
+                navigation.navigate('setting');
+              }}>
+              <Image
+                source={require('../assets/logo/Menu.png')}
+                style={{
+                  width: 21,
+                  height: 18,
+                }}
+              />
+            </TouchableOpacity>
+          ),
           tabBarLabel: '',
           tabBarIcon: () => (
             <TouchableOpacity>{logoProfile()}</TouchableOpacity>

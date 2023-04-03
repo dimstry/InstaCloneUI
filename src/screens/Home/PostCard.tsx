@@ -1,17 +1,33 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/react-in-jsx-scope */
 import {View, Image, Text, TouchableOpacity} from 'react-native';
-import {Icon} from 'react-native-vector-icons/Icon';
-import logoSave from '../assets/logo/Save';
-import logoComment from './images/commentImg';
-import logoLiked from './images/likedImg';
-import logoLove from './images/loveImg';
-import logoMessenger from './images/massageImg';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import logoSave from '../../assets/logo/Save';
+import logoComment from '../../components/images/commentImg';
+import logoLiked from '../../components/images/likedImg';
+import logoLove from '../../components/images/loveImg';
+import logoMessenger from '../../components/images/massageImg';
 // import {useState} from 'react';
 
-const PostCard = (item: any) => {
-  // const [isLiked, setIsLiked] = useState(false);
+type PostCardProps = {
+  imgSrc: any;
+  profileImgSrc: any;
+  name: string;
+  official: boolean;
+  location: string;
+  caption: string;
+  like: string;
+};
 
+const PostCard = ({
+  imgSrc,
+  profileImgSrc,
+  name,
+  official,
+  location,
+  caption,
+  like,
+}: PostCardProps) => {
   return (
     <View
       style={{
@@ -21,7 +37,7 @@ const PostCard = (item: any) => {
       {/* header */}
       <View style={{display: 'flex', flexDirection: 'row'}}>
         <Image
-          source={item.profileImgSrc}
+          source={profileImgSrc}
           style={{
             width: 50,
             height: 50,
@@ -43,16 +59,16 @@ const PostCard = (item: any) => {
               alignItems: 'center',
             }}>
             <Text style={{fontWeight: '600', fontSize: 16, color: '#000'}}>
-              {item.name}
+              {name}
             </Text>
-            {item.official && (
+            {official && (
               <Image
-                source={require('../assets/logo/Official.png')}
+                source={require('../../assets/logo/Official.png')}
                 style={{width: 16, height: 16, marginLeft: 5}}
               />
             )}
           </View>
-          <Text style={{color: '#262626', fontSize: 12}}>{item.location}</Text>
+          <Text style={{color: '#262626', fontSize: 12}}>{location}</Text>
         </View>
         <Icon
           name="ellipsis-h"
@@ -67,7 +83,7 @@ const PostCard = (item: any) => {
       </View>
       {/* image */}
       <Image
-        source={item.imgSrc}
+        source={imgSrc}
         style={{
           width: '100%',
           height: 400,
@@ -141,7 +157,7 @@ const PostCard = (item: any) => {
           and{' '}
         </Text>
         <Text style={{fontWeight: '700', fontSize: 14, color: '#262626'}}>
-          {item.like} others
+          {like} others
         </Text>
       </View>
       {/* caption */}
@@ -159,7 +175,7 @@ const PostCard = (item: any) => {
             fontSize: 16,
             color: '#262626',
           }}>
-          {item.name}
+          {name}
         </Text>
         <Text
           style={{
@@ -168,7 +184,7 @@ const PostCard = (item: any) => {
             color: '#262626',
             marginLeft: 5,
           }}>
-          {item.caption}
+          {caption}
         </Text>
       </View>
     </View>

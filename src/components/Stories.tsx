@@ -51,8 +51,8 @@ const Stories = () => {
             <Image
               source={item.imgSrc}
               style={{
-                width: 80,
-                height: 80,
+                width: 75,
+                height: 75,
                 borderRadius: 40,
                 marginBottom: 5,
               }}
