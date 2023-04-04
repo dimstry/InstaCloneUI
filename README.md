@@ -11,5 +11,5 @@ This project is an Instagram UI clone built using React Native
 
 ## Priview
 
-<img width="30%" height="50%" src="https://github.com/dimstry/MovieGo/blob/main/screenshot/Home.png"/>
-<img width="30%" height="50%" src="https://github.com/dimstry/MovieGo/blob/main/screenshot/Profile.png"/>
+<img width="30%" height="50%" src="screenshot/Home.png"/>
+<img width="30%" height="50%" src="Profile.png"/>
