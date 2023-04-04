@@ -115,7 +115,7 @@ const PostCard = ({
             }}>
             {logoLove(27, 23)}
           </TouchableOpacity>
-          {logoComment(23, 24)}
+          {logoComment(23, 23)}
           {logoMessenger()}
           <TouchableOpacity
             style={{

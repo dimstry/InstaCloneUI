@@ -1,13 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {FlatList} from 'react-native';
+import {ScrollView} from 'react-native';
 import {View} from 'react-native';
 import PostCard from './PostCard';
 import Stories from '../../components/Stories';
 
 const Home = () => {
-  // const ImgSrc
-
   const data = [
     {
       id: 1,
@@ -20,20 +18,30 @@ const Home = () => {
       location: 'Tokyo, Japan',
       caption: 'JYP Nation',
     },
+    {
+      id: 2,
+      name: 'itzy.all.in.us',
+      imgSrc: require('../../assets/post/post_1.jpeg'),
+      profileImgSrc: require('../../assets/profile/profile_1.png'),
+      like: '1.100.000',
+      comment: '12.3K',
+      official: true,
+      location: 'Tokyo, Japan',
+      caption: 'JYP Nation',
+    },
   ];
 
   return (
-    <View
+    <ScrollView
       style={{
         flex: 1,
         backgroundColor: '#fff',
       }}>
       <Stories />
-      <FlatList
-        data={data}
-        showsVerticalScrollIndicator={false}
-        renderItem={({item}) => (
+      <View>
+        {data.map(item => (
           <PostCard
+            key={item.id}
             imgSrc={item.imgSrc}
             profileImgSrc={item.profileImgSrc}
             name={item.name}
@@ -42,9 +50,9 @@ const Home = () => {
             caption={item.caption}
             like={item.like}
           />
-        )}
-      />
-    </View>
+        ))}
+      </View>
+    </ScrollView>
   );
 };
 

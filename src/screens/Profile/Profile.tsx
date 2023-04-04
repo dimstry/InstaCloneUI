@@ -2,6 +2,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import {Linking} from 'react-native';
 
 const Profile = () => {
   return (
@@ -80,7 +81,7 @@ const Profile = () => {
           <Text style={{fontSize: 15, color: '#000'}}>
             Frontend Developer | Mobile Developer
           </Text>
-          <TouchableOpacity
+          <View
             style={{
               display: 'flex',
               flexDirection: 'row',
@@ -91,9 +92,14 @@ const Profile = () => {
               size={12}
               style={{marginRight: 4}}
               color="#05386B"
+              onPress={() => Linking.openURL('https://dimstry.me')}
             />
-            <Text style={{fontSize: 14, color: '#05386B'}}>dimstry.me</Text>
-          </TouchableOpacity>
+            <Text
+              style={{fontSize: 14, color: '#05386B'}}
+              onPress={() => Linking.openURL('https://dimstry.me')}>
+              dimstry.me
+            </Text>
+          </View>
         </View>
         {/* edit profile */}
         <View

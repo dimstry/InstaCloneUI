@@ -19,10 +19,6 @@ import logoLove from './images/loveImg';
 import logoProfile from './images/profilImg';
 import logoList from './images/listImg';
 
-// import TopRated from '../screens/TopRated/TopRated';
-// import UpComing from '../screens/UpComing/UpComing';
-// import Popular from '../screens/Popular/Popular';
-
 const Tab = createBottomTabNavigator();
 
 const NavBottom = ({navigation}: any) => {
@@ -95,7 +91,7 @@ const NavBottom = ({navigation}: any) => {
         component={Home}
         options={{
           tabBarLabel: '',
-          tabBarIcon: () => <TouchableOpacity>{logoSearch()}</TouchableOpacity>,
+          tabBarIcon: () => logoSearch(),
         }}
       />
       <Tab.Screen
@@ -103,7 +99,7 @@ const NavBottom = ({navigation}: any) => {
         component={Home}
         options={{
           tabBarLabel: '',
-          tabBarIcon: () => <TouchableOpacity>{logoPost()}</TouchableOpacity>,
+          tabBarIcon: () => logoPost(),
         }}
       />
       <Tab.Screen
@@ -111,9 +107,7 @@ const NavBottom = ({navigation}: any) => {
         component={Home}
         options={{
           tabBarLabel: '',
-          tabBarIcon: () => (
-            <TouchableOpacity>{logoLove(29, 26)}</TouchableOpacity>
-          ),
+          tabBarIcon: () => logoLove(29, 25),
         }}
       />
       <Tab.Screen
@@ -157,9 +151,7 @@ const NavBottom = ({navigation}: any) => {
             </TouchableOpacity>
           ),
           tabBarLabel: '',
-          tabBarIcon: () => (
-            <TouchableOpacity>{logoProfile()}</TouchableOpacity>
-          ),
+          tabBarIcon: () => <View>{logoProfile()}</View>,
         }}
       />
     </Tab.Navigator>

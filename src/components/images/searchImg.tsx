@@ -6,7 +6,7 @@ function logoSearch() {
   return (
     <Image
       source={require('../../assets/logo/Search.png')}
-      style={{width: 24, height: 25}}
+      style={{width: 25, height: 25}}
     />
   );
 }
