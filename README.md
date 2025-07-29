@@ -11,5 +11,7 @@ This project is an Instagram UI clone built using React Native
 
 ## Priview
 
-<img width="30%" height="50%" src="screenshot/Home.png"/>
-<img width="30%" height="50%" src="screenshot/Profile.png"/>
+<p align="center">
+  <img src="screenshot/Home.png" width="30%" style="display: inline-block; margin-right: 10px;" />
+  <img src="screenshot/Profile.png" width="30%" style="display: inline-block;" />
+</p>
